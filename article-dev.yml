@@ -36,15 +36,8 @@ pagehelper:
   reasonable: true  # 分页合理化参数
   support-methods-arguments: true
   params: countSql
-  
 ---
 server:
   port: 8001
-
-mybatis:
-  config-location: classpath:mybatis/mybatis.cfg.xml
-  type-aliases-package: com.XXX.entity
-  mapper-locations:
-  - classpath:mybatis/mapper/**/*.xml
 spring:
   profiles: test
