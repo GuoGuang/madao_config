@@ -17,7 +17,7 @@ spring:
     port: 6379
     
 sms: 
-  ip: 666666666666
+  ip: 99999999999
 eureka:
   client: #客户端注册进eureka服务列表内
     service-url:
