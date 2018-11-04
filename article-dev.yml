@@ -1,8 +1,4 @@
-server:
-  port: 9009
 spring:
-  application:
-    name: coco-server-config #指定服务名
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.jdbc.Driver
