@@ -37,7 +37,7 @@ pagehelper:
   support-methods-arguments: true
   params: countSql
   
-  ---
+---
 server:
   port: 8001
 
