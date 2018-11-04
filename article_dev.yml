@@ -3,6 +3,7 @@ spring:
     profiles:
         active:
            - dev
+---
 spring:
   profiles: dev
   datasource:
