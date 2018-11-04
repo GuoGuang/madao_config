@@ -1,11 +1,4 @@
 spring:
-    profiles:
-        active:
-           - dev
----
-server:
-  port: 9003
-spring:
   profiles: dev
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
@@ -38,4 +31,3 @@ pagehelper:
   reasonable: true  # 分页合理化参数
   support-methods-arguments: true
   params: countSql
----
