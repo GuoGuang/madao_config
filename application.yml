@@ -1,0 +1,35 @@
+# Druid连接池的配置信息
+spring.datasource.type=com.alibaba.druid.pool.DruidDataSource
+spring.datasource.driverClassName = com.mysql.jdbc.Driver
+spring.datasource.url = jdbc:mysql://39.108.191.56:3306/youyd?characterEncoding=utf-8
+spring.datasource.username = root
+spring.datasource.password = root
+
+# 池启动时创建的连接数量
+spring.datasource.initialSize = 5
+# 在不新建连接的条件下，池中保持空闲的最少连接数
+spring.datasource.minIdle=5
+# 同一时间可以从池分配的最多连接数量。设置为0时表示无限制。
+spring.datasource.maxActive=20
+# 配置获取连接等待超时的时间
+spring.datasource.maxWait=60000 
+# 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+spring.datasource.timeBetweenEvictionRunsMillis=60000
+# 配置一个连接在池中最小生存的时间，单位是毫秒
+spring.datasource.minEvictableIdleTimeMillis=300000
+spring.datasource.validationQuery=SELECT 1 FROM DUAL
+# 连接空闲时是否进行有效性验证（即是否还和数据库连通的）
+spring.datasource.testWhileIdle=true
+# 取得连接时是否进行有效性验证（即是否还和数据库连通的）
+spring.datasource.testOnBorrow=false
+# 返回连接时是否进行有效性验证（即是否还和数据库连通的）
+spring.datasource.testOnReturn=false
+# 打开PSCache，并且指定每个连接上PSCache的大小
+spring.datasource.poolPreparedStatements=true
+spring.datasource.maxPoolPreparedStatementPerConnectionSize=20
+# 配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙
+spring.datasource.filters=stat,wall,logback
+# 通过connectProperties属性来打开mergeSql功能；慢SQL记录
+spring.datasource.connectionProperties=druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+
+# 访问：http://localhost:port/domain/druid/login.html 进行登录访问。
