@@ -1,16 +1,5 @@
 
 spring:
-  datasource:
-    type: com.alibaba.druid.pool.DruidDataSource
-    driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://39.108.191.56:3306/youyd?characterEncoding=utf-8
-    username: root
-    password: root
-    dbcp2:
-      min-idle: 5                                           # 数据库连接池的最小维持连接数
-      initial-size: 5                                       # 初始化连接数
-      max-total: 5                                          # 最大连接数
-      max-wait-millis: 200                                  # 等待连接获取的最大超时时间
   redis:
     host: 39.108.191.56
     port: 6379
@@ -23,13 +12,11 @@ eureka:
       #defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
       defaultZone:  http://localhost:5000/eureka  #单机版
   instance:
-    instance-id: ${spring.cloud.client.ip-address}:${server.port} # 为注册的这个服务起个别名
+    # 为注册的这个服务起个别名
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
     prefer-ip-address: true     #使用ip进行注册
+    # 注册中心跳转到swagger接口
+    status-page-url-path:  /swagger-ui.html
     # #绑定客户端的ip而不是主机号
     hostname: ${spring.cloud.client.ip-address}   # ${spring.cloud.client.ip-address} 参考https://blog.csdn.net/xichenguan/article/details/76632033
 
-pagehelper:
-  helper-dialect: mysql # 数据库语言
-  reasonable: true  # 分页合理化参数
-  support-methods-arguments: true
-  params: countSql
