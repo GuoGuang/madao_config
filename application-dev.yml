@@ -25,3 +25,9 @@ spring:
     host: 39.108.191.56
     username: admin
     password: admin
+
+  redis:
+    host: 39.108.191.56
+    port: 6379
+    timeout: 90000
+    password:
