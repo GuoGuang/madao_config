@@ -3,7 +3,7 @@ mybatis-plus:
   mapper-locations: classpath*:/dao/*.xml
   global-config:
     db-config:
-      table-prefix: "ar_"
+      table-prefix: "qa_"
   configuration:
     map-underscore-to-camel-case: true
     cache-enabled: true #配置的缓存的全局开关
