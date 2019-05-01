@@ -46,3 +46,10 @@ eureka:
     # #绑定客户端的ip而不是主机号
     hostname: ${spring.cloud.client.ip-address}   # ${spring.cloud.client.ip-address} 参考https://blog.csdn.net/xichenguan/article/details/76632033
 
+# 阿里云OSS对象存储
+aliyun:
+  oss:
+    # 确认endpoint里面的请求地址跟bucket是否都一致。 https://mvp.aliyun.com/zhidao/9180
+    endpoint: oss-cn-shanghai.aliyuncs.com
+    access-key-id: LTAInqBgQMW6xQLB
+    access-key-secret: 0nct3FsOzMssy1OUu0R6yLRTohokzu
