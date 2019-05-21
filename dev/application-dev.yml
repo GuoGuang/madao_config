@@ -25,6 +25,7 @@ spring:
     host: 39.108.191.56
     username: admin
     password: admin
+    port:5672
     
   redis:
     host: 39.108.191.56
