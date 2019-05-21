@@ -31,7 +31,7 @@ spring:
     host: 39.108.191.56
     port: 6379
     timeout: 90000
-    password:
+    password: root
       
 eureka:
   client: #客户端注册进eureka服务列表内
