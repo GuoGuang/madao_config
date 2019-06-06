@@ -51,6 +51,13 @@ eureka:
     # #绑定客户端的ip而不是主机号
     hostname: ${spring.cloud.client.ip-address}   # ${spring.cloud.client.ip-address} 参考https://blog.csdn.net/xichenguan/article/details/76632033
 
+encrypt:
+  key-store:
+    location: classpath:alyunAccessKey.jks
+    alias: aliyunAccessKey
+    password: GuoGuang
+    secret: GuoGuang
+    
 # 阿里云OSS对象存储
 aliyun:
   oss:
