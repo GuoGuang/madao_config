@@ -1,4 +1,8 @@
 spring:
+  boot:
+    admin:
+      client:
+        url: http://localhost:9002
   datasource: # Druid连接池的配置信息
     driverClassName: com.mysql.jdbc.Driver
     url: jdbc:mysql://39.108.191.56:3306/youyd?characterEncoding=utf-8&useSSL=false
@@ -54,3 +58,11 @@ aliyun:
     endpoint: oss-cn-shanghai.aliyuncs.com
     access-key-id: LTAIDM7wmaFJ4dBy
     access-key-secret: 85Vw9QLw1QiVKk4xj8gBcuTbv0mRSu
+# 监控平台：include: "*"表示 暴露所有端点，info, health... 等等
+management:
+  endpoints:
+    web:
+      exposure:
+        # * 在YAML中有特殊的含义，所以如果你想包含（或排除）所有的端点，一定要加引号，如下例所示：
+        include: "*"
+        
