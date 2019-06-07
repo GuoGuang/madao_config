@@ -55,9 +55,10 @@ eureka:
 aliyun:
   oss:
     # 确认endpoint里面的请求地址跟bucket是否都一致。 https://mvp.aliyun.com/zhidao/9180
-    endpoint: ''
-    access-key-id: ''
-    access-key-secret: ''
+    endpoint: oss-cn-shanghai.aliyuncs.com
+    access-key-id: LTAIWAkS6XmKzy7s 
+    access-key-secret: '{cipher}123456'
+    
 
 # 监控平台：include: "*"表示 暴露所有端点，info, health... 等等
 management:
