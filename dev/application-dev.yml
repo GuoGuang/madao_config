@@ -1,6 +1,4 @@
 spring:
-  autoconfigure:
-    exclude: cn.javaer.aliyun.spring.boot.autoconfigure.oss.OssAutoConfiguration
   boot:
     admin:
       client:
