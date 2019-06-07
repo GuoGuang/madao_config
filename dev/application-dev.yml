@@ -52,20 +52,20 @@ eureka:
     hostname: ${spring.cloud.client.ip-address}   # ${spring.cloud.client.ip-address} 参考https://blog.csdn.net/xichenguan/article/details/76632033
     
 # 阿里云OSS对象存储
-aliyun:
-  oss:
-    # 确认endpoint里面的请求地址跟bucket是否都一致。 https://mvp.aliyun.com/zhidao/9180
-    endpoint: oss-cn-shanghai.aliyuncs.com
-    access-key-id: LTAIWAkS6XmKzy7s 
-    access-key-secret: '{cipher}AQA1zBHTPSISH0lh0Y3jc+SAOstUgYXdfSyUrnihYWji8cmNSQThR0exfTKY1VAY3CfMUjWC6e5NS7RYbriclET8Nl8jNQbZZlrbbV5n+NBsffsBGbA62HZlqj4AocEpth8QK0kppLITaTio9Av3lhTCQ6w2vzWkYiPloYx7WOLK1JBYp3x4RVOiIXC2a8okPSvOIQTIiRFLblobnnAguI0c7ySoJcw0YWcGaf7mUA6dtZsBChZlQQdFl8K9m9srB9ByITKbaWHVMRpJaMOfOXX+2kzltVBMh1FMHNBXGT1Q+VLCEjbCuj13dOwSw1W1KiFDq8fBdflg6xuu0ZsuZpHoAxAHzxfN2xCIyuwjEm4FiP+bHKtT/ikdtyG7iGOTdJzF9O+8THalmrwLRV+qGn8j'
-    
-    # 阿里云OSS对象存储
 # aliyun:
 #   oss:
 #     # 确认endpoint里面的请求地址跟bucket是否都一致。 https://mvp.aliyun.com/zhidao/9180
 #     endpoint: oss-cn-shanghai.aliyuncs.com
-#     access-key-id: LTAIUNyjfNlk8ZFq 
-#     access-key-secret: '{cipher}AQBhJ+weFziPooQVmybE6tmLSe6HhTXcrbkXCHEqB3SCCdcyB+bPpKEserOb81txPo7bI/ER8jIJoi3NEkSahk0e68T41Kg0q6DxL2AxBMdiMxuRQbcyAX4JpQSthw5vLYql2ZTYW4c6Ot2ffFtIrOQfA6AqASZwKFCgx4+YXpJVLUV7KFqM5bA5mch7La5z19Kv0WsxEN2TI7MOIhhn4+N6loBqFIh2ORsP/PnZeulVF2FLK+mzpYEXi5+vr90U6Cd+sqBeM+lbYTHMdcIa1EmxuYwCoLxulA+0S/0HmdWZlCyhHkdIKqEBZRURWNDejq2PBc+U/tcrjnUrPzd2qOK3ZSeutCutEVsUpSeRm6PQnJJ0wiZdQLIRDD3dAXQtCQB6tQTO7fhkXQXROs0DQszb'
+#     access-key-id: LTAIWAkS6XmKzy7s 
+#     access-key-secret: '{cipher}AQA1zBHTPSISH0lh0Y3jc+SAOstUgYXdfSyUrnihYWji8cmNSQThR0exfTKY1VAY3CfMUjWC6e5NS7RYbriclET8Nl8jNQbZZlrbbV5n+NBsffsBGbA62HZlqj4AocEpth8QK0kppLITaTio9Av3lhTCQ6w2vzWkYiPloYx7WOLK1JBYp3x4RVOiIXC2a8okPSvOIQTIiRFLblobnnAguI0c7ySoJcw0YWcGaf7mUA6dtZsBChZlQQdFl8K9m9srB9ByITKbaWHVMRpJaMOfOXX+2kzltVBMh1FMHNBXGT1Q+VLCEjbCuj13dOwSw1W1KiFDq8fBdflg6xuu0ZsuZpHoAxAHzxfN2xCIyuwjEm4FiP+bHKtT/ikdtyG7iGOTdJzF9O+8THalmrwLRV+qGn8j'
+    
+    # 阿里云OSS对象存储
+aliyun:
+  oss:
+    # 确认endpoint里面的请求地址跟bucket是否都一致。 https://mvp.aliyun.com/zhidao/9180
+    endpoint: oss-cn-shanghai.aliyuncs.com
+    access-key-id: LTAIUNyjfNlk8ZFq 
+    access-key-secret: '{cipher}AQBhJ+weFziPooQVmybE6tmLSe6HhTXcrbkXCHEqB3SCCdcyB+bPpKEserOb81txPo7bI/ER8jIJoi3NEkSahk0e68T41Kg0q6DxL2AxBMdiMxuRQbcyAX4JpQSthw5vLYql2ZTYW4c6Ot2ffFtIrOQfA6AqASZwKFCgx4+YXpJVLUV7KFqM5bA5mch7La5z19Kv0WsxEN2TI7MOIhhn4+N6loBqFIh2ORsP/PnZeulVF2FLK+mzpYEXi5+vr90U6Cd+sqBeM+lbYTHMdcIa1EmxuYwCoLxulA+0S/0HmdWZlCyhHkdIKqEBZRURWNDejq2PBc+U/tcrjnUrPzd2qOK3ZSeutCutEVsUpSeRm6PQnJJ0wiZdQLIRDD3dAXQtCQB6tQTO7fhkXQXROs0DQszb'
     
 
 # 监控平台：include: "*"表示 暴露所有端点，info, health... 等等
