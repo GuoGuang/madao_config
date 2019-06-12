@@ -6,26 +6,6 @@ spring:
     admin:
       client:
         url: http://localhost:9002
-  datasource: # Druid连接池的配置信息
-    driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://39.108.191.56:3306/youyd?characterEncoding=utf-8&useSSL=false
-    type: com.alibaba.druid.pool.DruidDataSource
-    username: root
-    password: root
-    initialSize: 105 # 池启动时创建的连接数量
-    maxWait: 60000 # 配置获取连接等待超时的时间
-    minIdle: 105 # 在不新建连接的条件下，池中保持空闲的最少连接数
-    maxActive: 1000 # 同一时间可以从池分配的最多连接数量。设置为0时表示无限制。
-    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000 # 通过connectProperties属性来打开mergeSql功能；慢SQL记录
-    validationQuery: SELECT 1 FROM DUAL # 用来检测连接是否有效的sql，要求是一个查询语句，常用select 'x'。如果validationQuery为null，testOnBorrow、testOnReturn、testWhileIdle都不会起作用
-    filters: stat,wall # 配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙
-    poolPreparedStatements: true # 打开PSCache，并且指定每个连接上PSCache的大小
-    maxPoolPreparedStatementPerConnectionSize: 20 # 要启用PSCache，必须配置大于0，当大于0时，poolPreparedStatements自动触发修改为true。
-    testOnBorrow: false # 取得连接时是否进行有效性验证（即是否还和数据库连通的）
-    testWhileIdle: true # 连接空闲时是否进行有效性验证（即是否还和数据库连通的）
-    minEvictableIdleTimeMillis: 300000 # 配置一个连接在池中最小生存的时间，单位是毫秒
-    timeBetweenEvictionRunsMillis: 60000 # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
-    testOnReturn: false # 返回连接时是否进行有效性验证（即是否还和数据库连通的）
 
   # 访问：http://localhost:port/domain/druid/login.html 进行登录访问。
   rabbitmq:
