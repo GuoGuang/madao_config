@@ -1,1 +1,11 @@
 
+spring:
+  boot:
+    admin:
+      client:
+        url: http://localhost:9002
+  datasource:
+    url: jdbc:mysql://39.108.191.56:3306/youyd?characterEncoding=utf-8&useSSL=false
+    username: root
+    password: root
+    driver-class-name: com.alibaba.druid.pool.DruidDataSource
