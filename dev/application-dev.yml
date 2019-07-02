@@ -81,3 +81,6 @@ hystrix:
           thread:
             # 熔断器超时时间，默认：1秒
             timeoutInMilliseconds: 10000
+ribbon:  
+  ReadTimeout: 60000  
+  ConnectTimeout: 60000  
