@@ -14,7 +14,7 @@ spring:
     password: root
     initialSize: 10 # 池启动时创建的连接数量
     maxWait: 60000 # 配置获取连接等待超时的时间
-    minIdle: 105 # 在不新建连接的条件下，池中保持空闲的最少连接数
+    minIdle: 5 # 在不新建连接的条件下，池中保持空闲的最少连接数
     maxActive: 10 # 同一时间可以从池分配的最多连接数量。设置为0时表示无限制。
     connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000 # 通过connectProperties属性来打开mergeSql功能；慢SQL记录
     validationQuery: SELECT 1 FROM DUAL # 用来检测连接是否有效的sql，要求是一个查询语句，常用select 'x'。如果validationQuery为null，testOnBorrow、testOnReturn、testWhileIdle都不会起作用
