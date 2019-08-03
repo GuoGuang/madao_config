@@ -87,3 +87,6 @@ ribbon:
 feign:
   httpclient:
     enabled: true
+logging:
+  level:
+    com.youyd.api.user.UserServiceRpc:debug
