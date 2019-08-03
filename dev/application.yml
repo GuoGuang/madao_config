@@ -85,5 +85,5 @@ ribbon:
   ReadTimeout: 60000  
   ConnectTimeout: 60000  
 feign:
-  okhttp:
+  httpclient:
     enabled: true
