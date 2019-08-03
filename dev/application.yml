@@ -89,4 +89,4 @@ feign:
     enabled: true
 logging:
   level:
-    com.youyd.api.user.UserServiceRpc:debug
+    com.youyd.api.user.UserServiceRpc: debug
