@@ -1,4 +1,9 @@
 spring:
+  servlet:
+    # 设置上传文件大小
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
 # 如果没有aliyun oss 打开这个配置
 #  autoconfigure:
 #    exclude: cn.javaer.aliyun.spring.boot.autoconfigure.oss.OssAutoConfiguration
