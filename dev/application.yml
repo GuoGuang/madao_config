@@ -84,9 +84,11 @@ hystrix:
 ribbon:  
   ReadTimeout: 60000  
   ConnectTimeout: 60000  
+# 使用HTTP了client rpc调用
 feign:
   httpclient:
     enabled: true
+# feign请求打印日志
 logging:
   level:
     com.youyd.api.user.UserServiceRpc: debug
