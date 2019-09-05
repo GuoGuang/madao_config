@@ -96,4 +96,4 @@ feign:
 # feign请求打印日志
 logging:
   level:
-    com.youyd.api.user.UserServiceRpc: debug
+    com.youyd.api: debug
