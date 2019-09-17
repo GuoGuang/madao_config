@@ -1,4 +1,9 @@
 spring:
+  cloud:
+    config:
+      override-none: true
+      allow-override: true
+      override-system-properties: false
   servlet:
     # 设置上传文件大小
     multipart:
