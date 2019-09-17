@@ -33,11 +33,11 @@ spring:
     testOnReturn: false # 返回连接时是否进行有效性验证（即是否还和数据库连通的）
 
   # 访问：http://localhost:port/domain/druid/login.html 进行登录访问。
-  rabbitmq:
-    host: 39.108.191.56
-    username: admin
-    password: admin
-    port: 5672
+#   rabbitmq:
+#     host: 39.108.191.56
+#     username: admin
+#     password: admin
+#     port: 5672
     
   redis:
     host: 39.108.191.56
