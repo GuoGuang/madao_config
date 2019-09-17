@@ -16,7 +16,7 @@ spring:
     url: jdbc:mysql://rm-wz95iq4b1998037si9o.mysql.rds.aliyuncs.com:3306/youyd?characterEncoding=utf-8&useSSL=false
     type: com.alibaba.druid.pool.DruidDataSource
     username: root
-    password: '{cipher}AQBTgq5FmXNSEoi3WGSdtH7Y8iPV/epnrCs4twDxZ4QEWFqgO3bo9SxI6uVOCs9cx0gbGhgTKjqtgE8DpEStIyWr11pxom6m1kkJZ8M6zXyWcmfuf580kJS9p3Nk6rrwDoc6wo2tszaSCFIsyMQC77Bcx0SuaToeyz7EOpv7k4wbIxyQB4QyMrJx3UYoKbCJ0i1ULJwOZPwc8kczQMF/L1vLQvKYjLh714pAw3PeBA/ENpOJmcFcugREekpLxKH/Z34AGUMn7812w1v0Hd79CRvcDKshpmFO02FfAd6dszAKqp4tSTZn+SrA3D7b7vpVFgPRbpJ18+1TJqnFKzZ3r9ywzwoXzxejCHNFAptRqCnknPEdPTw0BHMUxvGt4OgnzoQ='
+    password: 你的数据库密码
     initialSize: 10 # 池启动时创建的连接数量
     maxWait: 60000 # 配置获取连接等待超时的时间
     minIdle: 5 # 在不新建连接的条件下，池中保持空闲的最少连接数
@@ -65,8 +65,7 @@ aliyun:
     # 确认endpoint里面的请求地址跟bucket是否都一致。 https://mvp.aliyun.com/zhidao/9180
     endpoint: oss-cn-shanghai.aliyuncs.com
     access-key-id: LTAI4FhwhytDfqtKarMLkQ8v
-    access-key-secret: '{cipher}AQA2svtgPMz29F+9wTyMF4YYi698H1MJDVeszRcSQ716Ly2168iyrKFZnh/BVe2vNhaI4HdzBY/trkfikInLIXHpAIiFpPpJI+ILcPuQMr6m5VSzBnfJcTLviR9fONw1ydWr649VY1Mv1ks3y98T8sSFM9glGqXCNWFsRH8hUq2GUiyY/7P/69e0awNhmKAekwNRDzFYcDU1bEqht311sUvTB7gPmoAjJHkYkGuHfDIO+9uG1OZ3bzO95pV90R+bLz33YhIRE3MO2nM/TxO+7bIAQRgZw4F7h8pdfpQrMiW2XCp8Vl4rPY3cic51It961PjKq12iaZlz3NtBygXpID733HQpCh93c2l63E5ZZCdfM+MgpRNwpLkSNcHqWP6pT7zjnuoA8301Ds+PJ/ZYk6Dp'
-    
+    access-key-secret: 你的secret
 
 # 监控平台：include: "*"表示 暴露所有端点，info, health... 等等
 management:
