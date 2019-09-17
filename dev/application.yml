@@ -13,10 +13,10 @@ spring:
         url: http://localhost:9090
   datasource: # Druid连接池的配置信息
     driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://39.108.191.56:3306/youyd?characterEncoding=utf-8&useSSL=false
+    url: jdbc:mysql://rm-wz95iq4b1998037si9o.mysql.rds.aliyuncs.com:3306/youyd?characterEncoding=utf-8&useSSL=false
     type: com.alibaba.druid.pool.DruidDataSource
     username: root
-    password: root
+    password: '{cipher}AQBTgq5FmXNSEoi3WGSdtH7Y8iPV/epnrCs4twDxZ4QEWFqgO3bo9SxI6uVOCs9cx0gbGhgTKjqtgE8DpEStIyWr11pxom6m1kkJZ8M6zXyWcmfuf580kJS9p3Nk6rrwDoc6wo2tszaSCFIsyMQC77Bcx0SuaToeyz7EOpv7k4wbIxyQB4QyMrJx3UYoKbCJ0i1ULJwOZPwc8kczQMF/L1vLQvKYjLh714pAw3PeBA/ENpOJmcFcugREekpLxKH/Z34AGUMn7812w1v0Hd79CRvcDKshpmFO02FfAd6dszAKqp4tSTZn+SrA3D7b7vpVFgPRbpJ18+1TJqnFKzZ3r9ywzwoXzxejCHNFAptRqCnknPEdPTw0BHMUxvGt4OgnzoQ='
     initialSize: 10 # 池启动时创建的连接数量
     maxWait: 60000 # 配置获取连接等待超时的时间
     minIdle: 5 # 在不新建连接的条件下，池中保持空闲的最少连接数
