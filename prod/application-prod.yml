@@ -15,8 +15,8 @@ spring:
     driverClassName: com.mysql.jdbc.Driver
     url: jdbc:mysql://rm-wz95iq4b1998037si9o.mysql.rds.aliyuncs.com:3306/youyd?characterEncoding=utf-8&useSSL=false
     type: com.alibaba.druid.pool.DruidDataSource
-    username: root
-    password: '{cipher}AQABQFAfZnidXmDlSKMuk8k9VfxT8S1a5At4K6rp2rdwKOF+bvsDCYUTk8XaS+vLCr9I/7m4Zl3u4UX3dq2ZlxBX58rGRjqvL4nSbTZF52cx2SIMXbKUHhYVJG2LbDuj0D//RBN6BGGfS9oWsT4oSn6YZ9H8iKuPOZMmBNg46iQiC381+BGLeiuvhuHHYGqUQ9pnpUE6UtxohNU07zwKsWGaMDi89XX4exQnjUdUFqXquFZYdpQiyO37RWdeyknlt47O/qTEel9/1vz5iTD3TP9TQ4H0IysKqOggAAP2uCc41TNoJsM77CzgxGsogoTA6fqGYroA8RNZUuV9FAvB/yJiuZQWkImgkjnmWR1kAbFEETelydKFdvfiPdj0grZXTLE='
+    username: root1
+    password: 123456Qq=
     initialSize: 105 # 池启动时创建的连接数量
     maxWait: 60000 # 配置获取连接等待超时的时间
     minIdle: 105 # 在不新建连接的条件下，池中保持空闲的最少连接数
