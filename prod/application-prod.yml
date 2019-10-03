@@ -16,7 +16,7 @@ spring:
     url: jdbc:mysql://rm-wz95iq4b1998037si9o.mysql.rds.aliyuncs.com:3306/youyd?characterEncoding=utf-8&useSSL=false
     type: com.alibaba.druid.pool.DruidDataSource
     username: root
-    password: 123456Qq=
+    password: Qwert12345
     initialSize: 105 # 池启动时创建的连接数量
     maxWait: 60000 # 配置获取连接等待超时的时间
     minIdle: 105 # 在不新建连接的条件下，池中保持空闲的最少连接数
