@@ -90,8 +90,9 @@ ribbon:
   ConnectTimeout: 60000  
 # 使用HTTP了client rpc调用
 feign:
-  httpclient:
+  hystrix:
     enabled: true
+
 # feign请求打印日志
 logging:
   level:
