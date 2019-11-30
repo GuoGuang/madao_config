@@ -15,15 +15,15 @@ spring:
     multipart:
       max-file-size: 10MB
       max-request-size: 10MB
-# 如果没有aliyun oss 打开这个配置
-#  autoconfigure:
-#    exclude: cn.javaer.aliyun.spring.boot.autoconfigure.oss.OssAutoConfiguration
+  # 如果没有aliyun oss 打开这个配置
+  #  autoconfigure:
+  #    exclude: cn.javaer.aliyun.spring.boot.autoconfigure.oss.OssAutoConfiguration
   boot:
     admin:
       client:
         url: http://localhost:9090
-        
-   jpa:
+
+  jpa:
     database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
     database: MYSQL
     show-sql: true
@@ -36,7 +36,7 @@ spring:
       hibernate.generate_statistics: true
       # 运行程序会校验数据与数据库的字段类型是否相同，不同会报错。
       hibernate.hbm2ddl.auto: validate
-      
+
   datasource: # Druid连接池的配置信息
     driverClassName: com.mysql.jdbc.Driver
     url: jdbc:mysql://rm-wz95iq4b1998037si9o.mysql.rds.aliyuncs.com:3306/youyd?characterEncoding=utf-8&useSSL=false
@@ -58,19 +58,19 @@ spring:
     timeBetweenEvictionRunsMillis: 60000 # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
     testOnReturn: false # 返回连接时是否进行有效性验证（即是否还和数据库连通的）
 
-  # 访问：http://localhost:port/domain/druid/login.html 进行登录访问。
-#   rabbitmq:
-#     host: 39.108.191.56
-#     username: admin
-#     password: admin
-#     port: 5672
-    
+    # 访问：http://localhost:port/domain/druid/login.html 进行登录访问。
+    #   rabbitmq:
+    #     host: 39.108.191.56
+    #     username: admin
+    #     password: admin
+    #     port: 5672
+
   redis:
     host: 207.148.76.64
     port: 6379
     timeout: 90000
     password: root
-      
+
 eureka:
   client: #客户端注册进eureka服务列表内
     service-url:
@@ -84,7 +84,7 @@ eureka:
     status-page-url-path:  /swagger-ui.html
     # #绑定客户端的ip而不是主机号
     hostname: ${spring.cloud.client.ip-address}   # ${spring.cloud.client.ip-address} 参考https://blog.csdn.net/xichenguan/article/details/76632033
-    
+
 # 阿里云OSS对象存储，如果没有aliyun oss 注释这个配置
 aliyun:
   oss:
@@ -92,7 +92,7 @@ aliyun:
     endpoint: oss-cn-shanghai.aliyuncs.com
     access-key-id: LTAI4FtKWuk1cgWvoDCHEsBU
     access-key-secret: '{cipher}AQBbnNR9GCJC/tsfGM1rArfhlFw1aBfksX0oYz4DIFfvGsaOL3N/Z/HM08vqRkZ+6yN+wC0apDeGv8ggEQVLEJXFEb19oP2CbMPcnYa6b8SC34T2MhqpBawZd8F/PLa3lOTT/iTvWRXOEBx84czA+hBduvXMMlx9878yPy6icFtEG/hHHc3wQronUKxPHAod0sUHyxqXJw2bWqR5OM58UrZkhv4RKo3hFnL7av/CUUglY5U6pPOegAp3NLDYBS5BENnAIcsk94ZfJMUbgxxsrWQnihniXPelXRvYtnJ630N5sZWQzk2A/RRBYZOj+t1wgwwsy69ZqhOvSP0mVZHSvOroSGUN3V+fHYPsdAr/OyjbHE3eIKSxb++xdhOYlry4WXAKa8KqizCqztlLrGiHaRz/'
-    
+
 # 监控平台：include: "*"表示 暴露所有端点，info, health... 等等
 management:
   endpoints:
@@ -100,7 +100,7 @@ management:
       exposure:
         # * 在YAML中有特殊的含义，所以如果你想包含（或排除）所有的端点，一定要加引号，如下例所示：
         include: "*"
-        
+
 
 ### Hystrix 配置，解决Spring Cloud第一次调用失败
 hystrix:
@@ -111,9 +111,9 @@ hystrix:
           thread:
             # 熔断器超时时间，默认：1秒
             timeoutInMilliseconds: 10000
-ribbon:  
-  ReadTimeout: 60000  
-  ConnectTimeout: 60000  
+ribbon:
+  ReadTimeout: 60000
+  ConnectTimeout: 60000
 # 使用HTTP了client rpc调用
 feign:
   hystrix:
