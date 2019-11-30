@@ -22,6 +22,21 @@ spring:
     admin:
       client:
         url: http://localhost:9090
+        
+   jpa:
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    database: MYSQL
+    show-sql: true
+    hibernate:
+      ddl-auto: none # 关闭每次启动自动删除表数据
+    properties:
+      hibernate.id.new_generator_mappings: true
+      hibernate.cache.use_second_level_cache: false
+      hibernate.cache.use_query_cache: false
+      hibernate.generate_statistics: true
+      # 运行程序会校验数据与数据库的字段类型是否相同，不同会报错。
+      hibernate.hbm2ddl.auto: validate
+      
   datasource: # Druid连接池的配置信息
     driverClassName: com.mysql.jdbc.Driver
     url: jdbc:mysql://rm-wz95iq4b1998037si9o.mysql.rds.aliyuncs.com:3306/youyd?characterEncoding=utf-8&useSSL=false
