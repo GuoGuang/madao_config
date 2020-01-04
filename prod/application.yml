@@ -4,19 +4,34 @@ spring:
     multipart:
       max-file-size: 10MB
       max-request-size: 10MB
-# 如果没有aliyun oss 打开这个配置
-#  autoconfigure:
-#    exclude: cn.javaer.aliyun.spring.boot.autoconfigure.oss.OssAutoConfiguration
+  # 如果没有aliyun oss 打开这个配置
+  #  autoconfigure:
+  #    exclude: cn.javaer.aliyun.spring.boot.autoconfigure.oss.OssAutoConfiguration
   boot:
     admin:
       client:
-        url: http://198.13.55.220:9090
+        url: http://localhost:9090
+
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    database: MYSQL
+    show-sql: true
+    hibernate:
+      ddl-auto: none # 关闭每次启动自动删除表数据
+    properties:
+      hibernate.id.new_generator_mappings: true
+      hibernate.cache.use_second_level_cache: false
+      hibernate.cache.use_query_cache: false
+      hibernate.generate_statistics: true
+      # 运行程序会校验数据与数据库的字段类型是否相同，不同会报错。
+      hibernate.hbm2ddl.auto: validate
+
   datasource: # Druid连接池的配置信息
     driverClassName: com.mysql.jdbc.Driver
     url: jdbc:mysql://rm-wz95iq4b1998037si9o.mysql.rds.aliyuncs.com:3306/youyd?characterEncoding=utf-8&useSSL=false
     type: com.alibaba.druid.pool.DruidDataSource
     username: root
-    password: '{cipher}AQABQFAfZnidXmDlSKMuk8k9VfxT8S1a5At4K6rp2rdwKOF+bvsDCYUTk8XaS+vLCr9I/7m4Zl3u4UX3dq2ZlxBX58rGRjqvL4nSbTZF52cx2SIMXbKUHhYVJG2LbDuj0D//RBN6BGGfS9oWsT4oSn6YZ9H8iKuPOZMmBNg46iQiC381+BGLeiuvhuHHYGqUQ9pnpUE6UtxohNU07zwKsWGaMDi89XX4exQnjUdUFqXquFZYdpQiyO37RWdeyknlt47O/qTEel9/1vz5iTD3TP9TQ4H0IysKqOggAAP2uCc41TNoJsM77CzgxGsogoTA6fqGYroA8RNZUuV9FAvB/yJiuZQWkImgkjnmWR1kAbFEETelydKFdvfiPdj0grZXTLE='
+    password: '{cipher}AQBegBWDzILBZaYBlymQAJDtXX+KXum6frjZ8heBuxWZGtMPEcwPsUoyqwpZk0wjIr3GCTCf5+dd7IATx1AJw9qYYj6/KBUP3MgB/9wCrhF7gXcO3uMo5hc4VJQcvfxl/C5dsQ0Hzs1JPvVxS3cyandLxx1A99pJVzohlVgf/8GaBbIf4+80H3OaA1w7Oto9bRIZzzaSmU3XSBlRt3PvueyOWm8jt3gA7FpEcDvBbN4eFDMK/Ozgr9ixNYjeIIIMpViutPPWAuzBlC7nc3u1WWmW+NCQTRPH+BX0iB/1JQ3TyeaNISM6Vc3AwFMzHwt3scGh9zaLC/LW04jLGivDEG6arI01GFZHX73CLoogQUqFK9C3s17AyyVKmpA/N+NruZ0='
     initialSize: 10 # 池启动时创建的连接数量
     maxWait: 60000 # 配置获取连接等待超时的时间
     minIdle: 5 # 在不新建连接的条件下，池中保持空闲的最少连接数
@@ -32,30 +47,33 @@ spring:
     timeBetweenEvictionRunsMillis: 60000 # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
     testOnReturn: false # 返回连接时是否进行有效性验证（即是否还和数据库连通的）
 
-  # 访问：http://localhost:port/domain/druid/login.html 进行登录访问。
-#   rabbitmq:
-#     host: 39.108.191.56
-#     username: admin
-#     password: admin
-#     port: 5672
-    
+    # 访问：http://localhost:port/domain/druid/login.html 进行登录访问。
+    #   rabbitmq:
+    #     host: 39.108.191.56
+    #     username: admin
+    #     password: admin
+    #     port: 5672
+
   redis:
-    host: 127.0.0.1
+    host: 207.148.76.64
     port: 6379
     timeout: 90000
     password: root
-      
+
 eureka:
   client: #客户端注册进eureka服务列表内
     service-url:
       #defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
-      defaultZone:  http://198.13.55.220:5000/eureka  #单机版
+      defaultZone:  http://localhost:5000/eureka  #单机版
   instance:
-    instance-id: http://198.13.55.220:${server.port}
-    prefer-ip-address: true 
-    status-page-url-path:  http://198.13.55.220:${server.port}/swagger-ui.html
-    hostname: 198.13.55.220
-  
+    # 为注册的这个服务起个别名
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+    prefer-ip-address: true     #使用ip进行注册
+    # 注册中心跳转到swagger接口
+    status-page-url-path:  /swagger-ui.html
+    # #绑定客户端的ip而不是主机号
+    hostname: ${spring.cloud.client.ip-address}   # ${spring.cloud.client.ip-address} 参考https://blog.csdn.net/xichenguan/article/details/76632033
+
 # 阿里云OSS对象存储，如果没有aliyun oss 注释这个配置
 aliyun:
   oss:
@@ -63,7 +81,7 @@ aliyun:
     endpoint: oss-cn-shanghai.aliyuncs.com
     access-key-id: LTAI4FtKWuk1cgWvoDCHEsBU
     access-key-secret: '{cipher}AQBbnNR9GCJC/tsfGM1rArfhlFw1aBfksX0oYz4DIFfvGsaOL3N/Z/HM08vqRkZ+6yN+wC0apDeGv8ggEQVLEJXFEb19oP2CbMPcnYa6b8SC34T2MhqpBawZd8F/PLa3lOTT/iTvWRXOEBx84czA+hBduvXMMlx9878yPy6icFtEG/hHHc3wQronUKxPHAod0sUHyxqXJw2bWqR5OM58UrZkhv4RKo3hFnL7av/CUUglY5U6pPOegAp3NLDYBS5BENnAIcsk94ZfJMUbgxxsrWQnihniXPelXRvYtnJ630N5sZWQzk2A/RRBYZOj+t1wgwwsy69ZqhOvSP0mVZHSvOroSGUN3V+fHYPsdAr/OyjbHE3eIKSxb++xdhOYlry4WXAKa8KqizCqztlLrGiHaRz/'
-    
+
 # 监控平台：include: "*"表示 暴露所有端点，info, health... 等等
 management:
   endpoints:
@@ -71,7 +89,7 @@ management:
       exposure:
         # * 在YAML中有特殊的含义，所以如果你想包含（或排除）所有的端点，一定要加引号，如下例所示：
         include: "*"
-        
+
 
 ### Hystrix 配置，解决Spring Cloud第一次调用失败
 hystrix:
@@ -82,13 +100,14 @@ hystrix:
           thread:
             # 熔断器超时时间，默认：1秒
             timeoutInMilliseconds: 10000
-ribbon:  
-  ReadTimeout: 60000  
-  ConnectTimeout: 60000  
+ribbon:
+  ReadTimeout: 60000
+  ConnectTimeout: 60000
 # 使用HTTP了client rpc调用
 feign:
-  httpclient:
+  hystrix:
     enabled: true
+
 # feign请求打印日志
 logging:
   level:
