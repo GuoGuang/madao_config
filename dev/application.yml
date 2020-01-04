@@ -55,7 +55,7 @@ spring:
     #     port: 5672
 
   redis:
-    host: 207.148.76.64
+    host: 139.180.196.135
     port: 6379
     timeout: 90000
     password: root
