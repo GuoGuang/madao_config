@@ -10,7 +10,7 @@ spring:
   boot:
     admin:
       client:
-        url: http://localhost:9090
+        url: http://114.55.104.203:9090
 
   jpa:
     database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
@@ -64,7 +64,7 @@ eureka:
   client: #客户端注册进eureka服务列表内
     service-url:
       #defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
-      defaultZone:  http://localhost:5000/eureka  #单机版
+      defaultZone:  http://114.55.104.203:5000/eureka  #单机版
   instance:
     # 为注册的这个服务起个别名
     instance-id: ${spring.cloud.client.ip-address}:${server.port}
