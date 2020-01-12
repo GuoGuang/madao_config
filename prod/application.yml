@@ -116,4 +116,4 @@ feign:
 # feign请求打印日志
 logging:
   level:
-    com.ibole.api.user: debug
+    com.ibole.api: debug
