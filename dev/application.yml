@@ -76,12 +76,15 @@ eureka:
 
 # 暂无可用图床，自行对接图床
 # 阿里云OSS对象存储，如果没有aliyun oss 注释这个配置
-#aliyun:
-#  oss:
-#    # 确认endpoint里面的请求地址跟bucket是否都一致。 https://mvp.aliyun.com/zhidao/9180
+aliyun:
+ oss:
+   # 确认endpoint里面的请求地址跟bucket是否都一致。 https://mvp.aliyun.com/zhidao/9180
 #    endpoint: oss-cn-shanghai.aliyuncs.com
 #    access-key-id: LTAI4FtKWuk1cgWvoDCHEsBU
 #    access-key-secret: '{cipher}AQBbnNR9GCJC/tsfGM1rArfhlFw1aBfksX0oYz4DIFfvGsaOL3N/Z/HM08vqRkZ+6yN+wC0apDeGv8ggEQVLEJXFEb19oP2CbMPcnYa6b8SC34T2MhqpBawZd8F/PLa3lOTT/iTvWRXOEBx84czA+hBduvXMMlx9878yPy6icFtEG/hHHc3wQronUKxPHAod0sUHyxqXJw2bWqR5OM58UrZkhv4RKo3hFnL7av/CUUglY5U6pPOegAp3NLDYBS5BENnAIcsk94ZfJMUbgxxsrWQnihniXPelXRvYtnJ630N5sZWQzk2A/RRBYZOj+t1wgwwsy69ZqhOvSP0mVZHSvOroSGUN3V+fHYPsdAr/OyjbHE3eIKSxb++xdhOYlry4WXAKa8KqizCqztlLrGiHaRz/'
+   endpoint: demo
+   access-key-id: keyid
+   access-key-secret: 'secret'
 
 # note: 开放所有端点后会导致你加密数据直接变成明文形式展示
 # 监控平台：include: "*"表示 暴露所有端点，info, health... 等等
