@@ -83,13 +83,14 @@ eureka:
 #    access-key-id: LTAI4FtKWuk1cgWvoDCHEsBU
 #    access-key-secret: '{cipher}AQBbnNR9GCJC/tsfGM1rArfhlFw1aBfksX0oYz4DIFfvGsaOL3N/Z/HM08vqRkZ+6yN+wC0apDeGv8ggEQVLEJXFEb19oP2CbMPcnYa6b8SC34T2MhqpBawZd8F/PLa3lOTT/iTvWRXOEBx84czA+hBduvXMMlx9878yPy6icFtEG/hHHc3wQronUKxPHAod0sUHyxqXJw2bWqR5OM58UrZkhv4RKo3hFnL7av/CUUglY5U6pPOegAp3NLDYBS5BENnAIcsk94ZfJMUbgxxsrWQnihniXPelXRvYtnJ630N5sZWQzk2A/RRBYZOj+t1wgwwsy69ZqhOvSP0mVZHSvOroSGUN3V+fHYPsdAr/OyjbHE3eIKSxb++xdhOYlry4WXAKa8KqizCqztlLrGiHaRz/'
 
+# note: 开放所有端点后会导致你加密数据直接变成明文形式展示
 # 监控平台：include: "*"表示 暴露所有端点，info, health... 等等
-management:
-  endpoints:
-    web:
-      exposure:
-        # * 在YAML中有特殊的含义，所以如果你想包含（或排除）所有的端点，一定要加引号，如下例所示：
-        include: "*"
+# management:
+#  endpoints:
+#    web:
+#      exposure:
+#        # * 在YAML中有特殊的含义，所以如果你想包含（或排除）所有的端点，一定要加引号，如下例所示：
+#        include: "*"
 
 
 ### Hystrix 配置，解决Spring Cloud第一次调用失败
