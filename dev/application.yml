@@ -111,4 +111,4 @@ feign:
 # feign请求打印日志
 logging:
   level:
-    com.youyd.api: debug
+    com.ibole.api: debug
