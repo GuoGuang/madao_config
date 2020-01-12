@@ -74,13 +74,14 @@ eureka:
     # #绑定客户端的ip而不是主机号
     hostname: ${spring.cloud.client.ip-address}   # ${spring.cloud.client.ip-address} 参考https://blog.csdn.net/xichenguan/article/details/76632033
 
+# 暂无可用图床，自行对接图床
 # 阿里云OSS对象存储，如果没有aliyun oss 注释这个配置
-aliyun:
-  oss:
-    # 确认endpoint里面的请求地址跟bucket是否都一致。 https://mvp.aliyun.com/zhidao/9180
-    endpoint: oss-cn-shanghai.aliyuncs.com
-    access-key-id: LTAI4FtKWuk1cgWvoDCHEsBU
-    access-key-secret: '{cipher}AQBbnNR9GCJC/tsfGM1rArfhlFw1aBfksX0oYz4DIFfvGsaOL3N/Z/HM08vqRkZ+6yN+wC0apDeGv8ggEQVLEJXFEb19oP2CbMPcnYa6b8SC34T2MhqpBawZd8F/PLa3lOTT/iTvWRXOEBx84czA+hBduvXMMlx9878yPy6icFtEG/hHHc3wQronUKxPHAod0sUHyxqXJw2bWqR5OM58UrZkhv4RKo3hFnL7av/CUUglY5U6pPOegAp3NLDYBS5BENnAIcsk94ZfJMUbgxxsrWQnihniXPelXRvYtnJ630N5sZWQzk2A/RRBYZOj+t1wgwwsy69ZqhOvSP0mVZHSvOroSGUN3V+fHYPsdAr/OyjbHE3eIKSxb++xdhOYlry4WXAKa8KqizCqztlLrGiHaRz/'
+#aliyun:
+#  oss:
+#    # 确认endpoint里面的请求地址跟bucket是否都一致。 https://mvp.aliyun.com/zhidao/9180
+#    endpoint: oss-cn-shanghai.aliyuncs.com
+#    access-key-id: LTAI4FtKWuk1cgWvoDCHEsBU
+#    access-key-secret: '{cipher}AQBbnNR9GCJC/tsfGM1rArfhlFw1aBfksX0oYz4DIFfvGsaOL3N/Z/HM08vqRkZ+6yN+wC0apDeGv8ggEQVLEJXFEb19oP2CbMPcnYa6b8SC34T2MhqpBawZd8F/PLa3lOTT/iTvWRXOEBx84czA+hBduvXMMlx9878yPy6icFtEG/hHHc3wQronUKxPHAod0sUHyxqXJw2bWqR5OM58UrZkhv4RKo3hFnL7av/CUUglY5U6pPOegAp3NLDYBS5BENnAIcsk94ZfJMUbgxxsrWQnihniXPelXRvYtnJ630N5sZWQzk2A/RRBYZOj+t1wgwwsy69ZqhOvSP0mVZHSvOroSGUN3V+fHYPsdAr/OyjbHE3eIKSxb++xdhOYlry4WXAKa8KqizCqztlLrGiHaRz/'
 
 # 监控平台：include: "*"表示 暴露所有端点，info, health... 等等
 management:
