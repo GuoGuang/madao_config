@@ -31,7 +31,7 @@ spring:
     url: jdbc:mysql://rm-wz95iq4b1998037si9o.mysql.rds.aliyuncs.com:3306/youyd?characterEncoding=utf-8&useSSL=false
     type: com.alibaba.druid.pool.DruidDataSource
     username: root
-    password: '{cipher}AQBegBWDzILBZaYBlymQAJDtXX+KXum6frjZ8heBuxWZGtMPEcwPsUoyqwpZk0wjIr3GCTCf5+dd7IATx1AJw9qYYj6/KBUP3MgB/9wCrhF7gXcO3uMo5hc4VJQcvfxl/C5dsQ0Hzs1JPvVxS3cyandLxx1A99pJVzohlVgf/8GaBbIf4+80H3OaA1w7Oto9bRIZzzaSmU3XSBlRt3PvueyOWm8jt3gA7FpEcDvBbN4eFDMK/Ozgr9ixNYjeIIIMpViutPPWAuzBlC7nc3u1WWmW+NCQTRPH+BX0iB/1JQ3TyeaNISM6Vc3AwFMzHwt3scGh9zaLC/LW04jLGivDEG6arI01GFZHX73CLoogQUqFK9C3s17AyyVKmpA/N+NruZ0='
+    password: '{cipher}AQBfIiYJNQWh4o0twS1iLAP/1nwv5E8Mrv+7K/l+UsRmKtJxUtJtplc7H70+xs+oDzqN+BBnYvi5oV7MMarFAMApWw02NtZ+BodIQLxbXpOerYa6kZOgHjqFkCy+F/bRT28IjwnQs1Z3iPlHk1vRnf3HeQJd7ajfq5B0lZRtSwmndHwwThTj37iIALoEpHfkze1tAjLgWzFO8Uk6s8c4UcfYvGAZG4V8V391Sr6yMCfn6t0hm+4YAjaSPG5JlR/ut3kjbHuRwUsaNWIQhDmo+2+hEWquA+zbhSHUk/cAlxb3t/lZ76YhpBzTCc57Xbh+LcSghHzCECDLu3FmMKI3MMVbs9wFOMAZY7SjoB3tA46bvG3jpIN+F0SyE6R+oF8bcn8='
     initialSize: 10 # 池启动时创建的连接数量
     maxWait: 60000 # 配置获取连接等待超时的时间
     minIdle: 5 # 在不新建连接的条件下，池中保持空闲的最少连接数
@@ -74,21 +74,23 @@ eureka:
     # #绑定客户端的ip而不是主机号
     hostname: ${spring.cloud.client.ip-address}   # ${spring.cloud.client.ip-address} 参考https://blog.csdn.net/xichenguan/article/details/76632033
 
+# 暂无可用图床，自行对接图床
 # 阿里云OSS对象存储，如果没有aliyun oss 注释这个配置
-aliyun:
-  oss:
-    # 确认endpoint里面的请求地址跟bucket是否都一致。 https://mvp.aliyun.com/zhidao/9180
-    endpoint: oss-cn-shanghai.aliyuncs.com
-    access-key-id: LTAI4FtKWuk1cgWvoDCHEsBU
-    access-key-secret: '{cipher}AQBbnNR9GCJC/tsfGM1rArfhlFw1aBfksX0oYz4DIFfvGsaOL3N/Z/HM08vqRkZ+6yN+wC0apDeGv8ggEQVLEJXFEb19oP2CbMPcnYa6b8SC34T2MhqpBawZd8F/PLa3lOTT/iTvWRXOEBx84czA+hBduvXMMlx9878yPy6icFtEG/hHHc3wQronUKxPHAod0sUHyxqXJw2bWqR5OM58UrZkhv4RKo3hFnL7av/CUUglY5U6pPOegAp3NLDYBS5BENnAIcsk94ZfJMUbgxxsrWQnihniXPelXRvYtnJ630N5sZWQzk2A/RRBYZOj+t1wgwwsy69ZqhOvSP0mVZHSvOroSGUN3V+fHYPsdAr/OyjbHE3eIKSxb++xdhOYlry4WXAKa8KqizCqztlLrGiHaRz/'
+#aliyun:
+#  oss:
+#    # 确认endpoint里面的请求地址跟bucket是否都一致。 https://mvp.aliyun.com/zhidao/9180
+#    endpoint: oss-cn-shanghai.aliyuncs.com
+#    access-key-id: LTAI4FtKWuk1cgWvoDCHEsBU
+#    access-key-secret: '{cipher}AQBbnNR9GCJC/tsfGM1rArfhlFw1aBfksX0oYz4DIFfvGsaOL3N/Z/HM08vqRkZ+6yN+wC0apDeGv8ggEQVLEJXFEb19oP2CbMPcnYa6b8SC34T2MhqpBawZd8F/PLa3lOTT/iTvWRXOEBx84czA+hBduvXMMlx9878yPy6icFtEG/hHHc3wQronUKxPHAod0sUHyxqXJw2bWqR5OM58UrZkhv4RKo3hFnL7av/CUUglY5U6pPOegAp3NLDYBS5BENnAIcsk94ZfJMUbgxxsrWQnihniXPelXRvYtnJ630N5sZWQzk2A/RRBYZOj+t1wgwwsy69ZqhOvSP0mVZHSvOroSGUN3V+fHYPsdAr/OyjbHE3eIKSxb++xdhOYlry4WXAKa8KqizCqztlLrGiHaRz/'
 
+# note: 开放所有端点后会导致你加密数据直接变成明文形式展示
 # 监控平台：include: "*"表示 暴露所有端点，info, health... 等等
-management:
-  endpoints:
-    web:
-      exposure:
-        # * 在YAML中有特殊的含义，所以如果你想包含（或排除）所有的端点，一定要加引号，如下例所示：
-        include: "*"
+# management:
+#  endpoints:
+#    web:
+#      exposure:
+#        # * 在YAML中有特殊的含义，所以如果你想包含（或排除）所有的端点，一定要加引号，如下例所示：
+#        include: "*"
 
 
 ### Hystrix 配置，解决Spring Cloud第一次调用失败
@@ -111,4 +113,4 @@ feign:
 # feign请求打印日志
 logging:
   level:
-    com.youyd.api: debug
+    com.ibole.api: debug
