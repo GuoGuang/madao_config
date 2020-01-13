@@ -93,6 +93,7 @@ management:
   endpoints:
     web:
       exposure:
+        # *在YAML中有特殊的含义，所以如果你想包含（或排除）所有的端点，一定要加引号，如下例所示：
         include: "*"
 
 
