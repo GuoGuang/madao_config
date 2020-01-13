@@ -22,7 +22,8 @@ spring:
       hibernate.id.new_generator_mappings: true
       hibernate.cache.use_second_level_cache: false
       hibernate.cache.use_query_cache: false
-      hibernate.generate_statistics: true
+      # 禁用Session Metrics打印
+      hibernate.generate_statistics: false
       # 运行程序会校验数据与数据库的字段类型是否相同，不同会报错。
       hibernate.hbm2ddl.auto: validate
 
@@ -88,14 +89,11 @@ aliyun:
 
 
 # 监控平台：include: "*"表示 暴露所有端点，info, health... 等等
-# management:
-#  endpoints:
-#    web:
-#      exposure:
-#        # * 在YAML中有特殊的含义，所以如果你想包含（或排除）所有的端点，一定要加引号，如下例所示：
-#        # include: "*" # note: 开放所有端点后会导致你加密数据直接变成明文形式展示
-# #        exclude: "*"
-#         include: "info"
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
 
 
 ### Hystrix 配置，解决Spring Cloud第一次调用失败
