@@ -72,7 +72,7 @@ eureka:
     instance-id: http://139.9.155.54:${server.port}
     prefer-ip-address: true     #使用ip进行注册
     # 注册中心跳转到swagger接口
-    status-page-url-path:  http://114.55.104.203:${server.port}/swagger-ui.html
+    status-page-url-path:  http://139.9.155.54:${server.port}/swagger-ui.html
     # #绑定客户端的ip而不是主机号
     hostname: 139.9.155.54   # ${spring.cloud.client.ip-address} 参考https://blog.csdn.net/xichenguan/article/details/76632033
 
