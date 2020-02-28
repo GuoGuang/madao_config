@@ -29,7 +29,7 @@ spring:
       hibernate.hbm2ddl.auto: validate
 
   datasource: # Druid连接池的配置信息
-    driverClassName: com.mysql.jdbc.Driver
+    driverClassName: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://rm-wz95iq4b1998037si9o.mysql.rds.aliyuncs.com:3306/youyd?characterEncoding=utf-8&useSSL=false
     type: com.alibaba.druid.pool.DruidDataSource
     username: ibole_account
@@ -69,12 +69,12 @@ eureka:
       defaultZone:  http://114.55.104.203:5000/eureka  #单机版
   instance:
     # 为注册的这个服务起个别名
-    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+    instance-id: http://139.9.155.54:${server.port}
     prefer-ip-address: true     #使用ip进行注册
     # 注册中心跳转到swagger接口
     status-page-url-path:  /swagger-ui.html
     # #绑定客户端的ip而不是主机号
-    hostname: ${spring.cloud.client.ip-address}   # ${spring.cloud.client.ip-address} 参考https://blog.csdn.net/xichenguan/article/details/76632033
+    hostname: 139.9.155.54   # ${spring.cloud.client.ip-address} 参考https://blog.csdn.net/xichenguan/article/details/76632033
 
 # 暂无可用图床，自行对接图床
 # 阿里云OSS对象存储，如果没有aliyun oss 注释这个配置
