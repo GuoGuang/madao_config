@@ -11,6 +11,7 @@ spring:
     admin:
       client:
         url: http://114.55.104.203:9090
+      context-path: /admin
 
   jpa:
     database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
@@ -28,7 +29,7 @@ spring:
       hibernate.hbm2ddl.auto: validate
 
   datasource: # Druid连接池的配置信息
-    driverClassName: com.mysql.jdbc.Driver
+    driverClassName: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://rm-wz95iq4b1998037si9o.mysql.rds.aliyuncs.com:3306/youyd?characterEncoding=utf-8&useSSL=false
     type: com.alibaba.druid.pool.DruidDataSource
     username: ibole_account
