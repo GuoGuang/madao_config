@@ -10,8 +10,8 @@ spring:
   boot:
     admin:
       client:
-        url: http://114.55.104.203:9090
-      context-path: /admin
+        url: http://139.9.155.54:9090
+      #context-path: /admin
 
   jpa:
     database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
