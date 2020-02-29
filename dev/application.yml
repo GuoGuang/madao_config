@@ -10,8 +10,7 @@ spring:
   boot:
     admin:
       client:
-        url: http://114.55.104.203:9090
-      context-path: /admin
+        url: http://localhost:9090
 
   jpa:
     database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
@@ -29,7 +28,7 @@ spring:
       hibernate.hbm2ddl.auto: validate
 
   datasource: # Druid连接池的配置信息
-    driverClassName: com.mysql.cj.jdbc.Driver
+    driverClassName: com.mysql.jdbc.Driver
     url: jdbc:mysql://rm-wz95iq4b1998037si9o.mysql.rds.aliyuncs.com:3306/youyd?characterEncoding=utf-8&useSSL=false
     type: com.alibaba.druid.pool.DruidDataSource
     username: ibole_account
@@ -66,7 +65,7 @@ eureka:
   client: #客户端注册进eureka服务列表内
     service-url:
       #defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
-      defaultZone:  http://114.55.104.203:5000/eureka  #单机版
+      defaultZone:  http://127.0.0.1:5000/eureka  #单机版
   instance:
     # 为注册的这个服务起个别名
     instance-id: ${spring.cloud.client.ip-address}:${server.port}
