@@ -10,7 +10,7 @@ spring:
   boot:
     admin:
       client:
-        url: http://127.0.0.1:9090
+        url: http://139.9.155.54:9090
       context-path: /admin
 
   jpa:
