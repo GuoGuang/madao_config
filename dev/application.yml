@@ -17,7 +17,8 @@ spring:
     database: MYSQL
     show-sql: true
     hibernate:
-      ddl-auto: none # 关闭每次启动自动删除表数据
+    #  ddl-auto: none # 关闭每次启动自动删除表数据
+      ddl-auto: update
     properties:
       hibernate.id.new_generator_mappings: true
       hibernate.cache.use_second_level_cache: false
