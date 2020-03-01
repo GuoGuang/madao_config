@@ -81,12 +81,9 @@ eureka:
 aliyun:
  oss:
    # 确认endpoint里面的请求地址跟bucket是否都一致。 https://mvp.aliyun.com/zhidao/9180
-#    endpoint: oss-cn-shanghai.aliyuncs.com
-#    access-key-id: LTAI4FtKWuk1cgWvoDCHEsBU
-#    access-key-secret: '{cipher}AQBbnNR9GCJC/tsfGM1rArfhlFw1aBfksX0oYz4DIFfvGsaOL3N/Z/HM08vqRkZ+6yN+wC0apDeGv8ggEQVLEJXFEb19oP2CbMPcnYa6b8SC34T2MhqpBawZd8F/PLa3lOTT/iTvWRXOEBx84czA+hBduvXMMlx9878yPy6icFtEG/hHHc3wQronUKxPHAod0sUHyxqXJw2bWqR5OM58UrZkhv4RKo3hFnL7av/CUUglY5U6pPOegAp3NLDYBS5BENnAIcsk94ZfJMUbgxxsrWQnihniXPelXRvYtnJ630N5sZWQzk2A/RRBYZOj+t1wgwwsy69ZqhOvSP0mVZHSvOroSGUN3V+fHYPsdAr/OyjbHE3eIKSxb++xdhOYlry4WXAKa8KqizCqztlLrGiHaRz/'
-   endpoint: demo
-   access-key-id: keyid
-   access-key-secret: 'secret'
+    endpoint: oss-cn-shanghai.aliyuncs.com
+    access-key-id: LTAI4Fj5rWx5qpxXZk89QCdh
+    access-key-secret: '{cipher}AQAYNE7u2IY3CZh5cjCeo2XzTvi/Bj2z3T9uFxkI3tV1UtUiDflcdCGHoMrE7lR7MsVY1SWSkJ+KIpUuG+3ZwPe1qdcSiZIg000hB//tOH3WOhFuOCk7mTMs+Myyy+svHZS42ewFVgsuOrZdzq0qcFAF61pK5MZUh4+wmNMyOCbQ9hQnR768MoHQsQo5ChD1CC6mB6qoEtoL4e+18gOENDOtNkWGQ+G8euhyB/thaY3rZE7+Hau88eAEr+H0Gi0gTy3EqQVVeSds7T4nsran2y56N0v691QLkfsoRxSU6cDc0rwRSD+xIbzQSwCeIQHxgfDHcf4vxRzDsZJJ8+HrKS3rR5a348BczrUuq6CRtO45bNGYm79fdd4Gd/qpRRYkvC244KjR7bVhcItgx2dlRhUS'
 
 
 # 监控平台：include: "*"表示 暴露所有端点，info, health... 等等
