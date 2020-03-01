@@ -26,7 +26,8 @@ spring:
       # 禁用Session Metrics打印
       hibernate.generate_statistics: false
       # 运行程序会校验数据与数据库的字段类型是否相同，不同会报错。
-      hibernate.hbm2ddl.auto: validate
+      # hibernate.hbm2ddl.auto: validate
+      hibernate.hbm2ddl.auto: ipdate
 
   datasource: # Druid连接池的配置信息
     driverClassName: com.mysql.jdbc.Driver
