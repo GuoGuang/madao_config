@@ -16,6 +16,7 @@ spring:
     database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
     database: MYSQL
     show-sql: true
+    open-in-view: true
     hibernate:
     #  ddl-auto: none # 关闭每次启动自动删除表数据
       ddl-auto: update
