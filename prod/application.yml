@@ -10,16 +10,15 @@ spring:
   boot:
     admin:
       client:
-        url: http://localhost:9090
+        url: http://121.36.158.84:9090
+      context-path: /admin
 
   jpa:
     database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
     database: MYSQL
     show-sql: true
-    open-in-view: true
     hibernate:
-    #  ddl-auto: none # 关闭每次启动自动删除表数据
-      ddl-auto: update
+      ddl-auto: none # 关闭每次启动自动删除表数据
     properties:
       hibernate.id.new_generator_mappings: true
       hibernate.cache.use_second_level_cache: false
@@ -27,16 +26,14 @@ spring:
       # 禁用Session Metrics打印
       hibernate.generate_statistics: false
       # 运行程序会校验数据与数据库的字段类型是否相同，不同会报错。
-      # hibernate.hbm2ddl.auto: validate
-      hibernate: 
-        dialect: org.hibernate.dialect.MySQL5Dialect
+      hibernate.hbm2ddl.auto: validate
 
   datasource: # Druid连接池的配置信息
-    driverClassName: com.mysql.jdbc.Driver
+    driverClassName: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://rm-bp132w75u10e3ov387o.mysql.rds.aliyuncs.com:3306/youyd?characterEncoding=utf-8&useSSL=false
     type: com.alibaba.druid.pool.DruidDataSource
-    username: zoocode
-    password: '{cipher}AQBg7UnnR4NvH3p4Fx66S/XRUv3LNmBPWK2BKKqH8U8Z8pz5QLb1jbwSNvNF2XI6lblDIIcDdPXgsCG82dSqNMTHugWcVMdOyDX8lf2iXDuxin+e4HDuZB41L+qVJXavFtBlHv7NTt97DyNr7OgEP1P2a1/WOzjOMFxzMN5/y6jxc9eqt2pt4EON2j+pLN1FLUz5hyeceKlvGxLqGqep64WtfkdBNuJQR2CbYuQj41YYVYZxra5oK1rl4jYFW1eI778ef0R2xuRNTLP/8K1zQNnXaiN59K2UaVwsKllb3EcSFaWfU9pOQcyFR7O984XNTI2QQZfl9X3508m66SiRIcd1ulimqhYWPeygt/pOucMp7ZwwKD1Y9YsTj+GyX/OxDv4='
+    username: ibole_account
+    password: '{cipher}AQBfIiYJNQWh4o0twS1iLAP/1nwv5E8Mrv+7K/l+UsRmKtJxUtJtplc7H70+xs+oDzqN+BBnYvi5oV7MMarFAMApWw02NtZ+BodIQLxbXpOerYa6kZOgHjqFkCy+F/bRT28IjwnQs1Z3iPlHk1vRnf3HeQJd7ajfq5B0lZRtSwmndHwwThTj37iIALoEpHfkze1tAjLgWzFO8Uk6s8c4UcfYvGAZG4V8V391Sr6yMCfn6t0hm+4YAjaSPG5JlR/ut3kjbHuRwUsaNWIQhDmo+2+hEWquA+zbhSHUk/cAlxb3t/lZ76YhpBzTCc57Xbh+LcSghHzCECDLu3FmMKI3MMVbs9wFOMAZY7SjoB3tA46bvG3jpIN+F0SyE6R+oF8bcn8='
     initialSize: 10 # 池启动时创建的连接数量
     maxWait: 60000 # 配置获取连接等待超时的时间
     minIdle: 5 # 在不新建连接的条件下，池中保持空闲的最少连接数
@@ -69,15 +66,15 @@ eureka:
   client: #客户端注册进eureka服务列表内
     service-url:
       #defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
-      defaultZone:  http://127.0.0.1:5000/eureka  #单机版
+      defaultZone:  http://114.55.104.203:5000/eureka  #单机版
   instance:
     # 为注册的这个服务起个别名
-    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+    instance-id: http://121.36.158.84:${server.port}
     prefer-ip-address: true     #使用ip进行注册
     # 注册中心跳转到swagger接口
-    status-page-url-path:  /swagger-ui.html
+    status-page-url-path:  http://121.36.158.84:${server.port}/swagger-ui.html
     # #绑定客户端的ip而不是主机号
-    hostname: ${spring.cloud.client.ip-address}   # ${spring.cloud.client.ip-address} 参考https://blog.csdn.net/xichenguan/article/details/76632033
+    hostname: 121.36.158.84   # ${spring.cloud.client.ip-address} 参考https://blog.csdn.net/xichenguan/article/details/76632033
 
 # 暂无可用图床，自行对接图床
 # 阿里云OSS对象存储，如果没有aliyun oss 注释这个配置
