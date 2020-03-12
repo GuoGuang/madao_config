@@ -36,7 +36,7 @@ spring:
     driverClassName: com.mysql.jdbc.Driver
     url: jdbc:mysql://rm-bp132w75u10e3ov387o.mysql.rds.aliyuncs.com:3306/youyd?characterEncoding=utf-8&useSSL=false
     type: com.alibaba.druid.pool.DruidDataSource
-    username: ibole_account
+    username: zoocode
     password: '{cipher}AQBfIiYJNQWh4o0twS1iLAP/1nwv5E8Mrv+7K/l+UsRmKtJxUtJtplc7H70+xs+oDzqN+BBnYvi5oV7MMarFAMApWw02NtZ+BodIQLxbXpOerYa6kZOgHjqFkCy+F/bRT28IjwnQs1Z3iPlHk1vRnf3HeQJd7ajfq5B0lZRtSwmndHwwThTj37iIALoEpHfkze1tAjLgWzFO8Uk6s8c4UcfYvGAZG4V8V391Sr6yMCfn6t0hm+4YAjaSPG5JlR/ut3kjbHuRwUsaNWIQhDmo+2+hEWquA+zbhSHUk/cAlxb3t/lZ76YhpBzTCc57Xbh+LcSghHzCECDLu3FmMKI3MMVbs9wFOMAZY7SjoB3tA46bvG3jpIN+F0SyE6R+oF8bcn8='
     initialSize: 10 # 池启动时创建的连接数量
     maxWait: 60000 # 配置获取连接等待超时的时间
