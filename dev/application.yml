@@ -29,9 +29,7 @@ spring:
       # 运行程序会校验数据与数据库的字段类型是否相同，不同会报错。
       # hibernate.hbm2ddl.auto: validate
       hibernate: 
-        #dialect: org.hibernate.dialect.MySQL5Dialect
-        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
-
+        dialect: org.hibernate.dialect.MySQL5Dialect
 
   datasource: # Druid连接池的配置信息
     driverClassName: com.mysql.jdbc.Driver
