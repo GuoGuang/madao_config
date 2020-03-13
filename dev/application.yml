@@ -1,6 +1,5 @@
 spring:
   servlet:
-    # 设置上传文件大小
     multipart:
       max-file-size: 10MB
       max-request-size: 10MB
@@ -18,20 +17,17 @@ spring:
     show-sql: true
     open-in-view: true
     hibernate:
-    #  ddl-auto: none # 关闭每次启动自动删除表数据
       ddl-auto: update
     properties:
       hibernate.id.new_generator_mappings: true
       hibernate.cache.use_second_level_cache: false
       hibernate.cache.use_query_cache: false
-      # 禁用Session Metrics打印
       hibernate.generate_statistics: false
-      # 运行程序会校验数据与数据库的字段类型是否相同，不同会报错。
       # hibernate.hbm2ddl.auto: validate
       hibernate: 
         dialect: org.hibernate.dialect.MySQL5Dialect
 
-  datasource: # Druid连接池的配置信息
+  datasource: 
     driverClassName: com.mysql.jdbc.Driver
     url: jdbc:mysql://rm-bp132w75u10e3ov387o.mysql.rds.aliyuncs.com:3306/youyd?characterEncoding=utf-8&useSSL=false
     type: com.alibaba.druid.pool.DruidDataSource
@@ -66,24 +62,20 @@ spring:
     password: root
 
 eureka:
-  client: #客户端注册进eureka服务列表内
+  client:
     service-url:
       #defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
-      defaultZone:  http://127.0.0.1:5000/eureka  #单机版
+      defaultZone:  http://127.0.0.1:5000/eureka
   instance:
-    # 为注册的这个服务起个别名
     instance-id: ${spring.cloud.client.ip-address}:${server.port}
-    prefer-ip-address: true     #使用ip进行注册
-    # 注册中心跳转到swagger接口
+    prefer-ip-address: true
     status-page-url-path:  /swagger-ui.html
-    # #绑定客户端的ip而不是主机号
     hostname: ${spring.cloud.client.ip-address}   # ${spring.cloud.client.ip-address} 参考https://blog.csdn.net/xichenguan/article/details/76632033
 
 # 暂无可用图床，自行对接图床
 # 阿里云OSS对象存储，如果没有aliyun oss 注释这个配置
 aliyun:
  oss:
-   # 确认endpoint里面的请求地址跟bucket是否都一致。 https://mvp.aliyun.com/zhidao/9180
     endpoint: oss-cn-shanghai.aliyuncs.com
     access-key-id: LTAI4Fj5rWx5qpxXZk89QCdh
     access-key-secret: '{cipher}AQAYNE7u2IY3CZh5cjCeo2XzTvi/Bj2z3T9uFxkI3tV1UtUiDflcdCGHoMrE7lR7MsVY1SWSkJ+KIpUuG+3ZwPe1qdcSiZIg000hB//tOH3WOhFuOCk7mTMs+Myyy+svHZS42ewFVgsuOrZdzq0qcFAF61pK5MZUh4+wmNMyOCbQ9hQnR768MoHQsQo5ChD1CC6mB6qoEtoL4e+18gOENDOtNkWGQ+G8euhyB/thaY3rZE7+Hau88eAEr+H0Gi0gTy3EqQVVeSds7T4nsran2y56N0v691QLkfsoRxSU6cDc0rwRSD+xIbzQSwCeIQHxgfDHcf4vxRzDsZJJ8+HrKS3rR5a348BczrUuq6CRtO45bNGYm79fdd4Gd/qpRRYkvC244KjR7bVhcItgx2dlRhUS'
@@ -110,7 +102,7 @@ hystrix:
 ribbon:
   ReadTimeout: 60000
   ConnectTimeout: 60000
-# 使用HTTP了client rpc调用
+# 使用HTTPclient rpc调用
 feign:
   hystrix:
     enabled: true
