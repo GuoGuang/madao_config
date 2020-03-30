@@ -30,10 +30,10 @@ spring:
 
   datasource: # Druid连接池的配置信息
     driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://45.76.215.59:30000/admin?characterEncoding=utf-8&useSSL=false
+    url: jdbc:mysql://rm-bp132w75u10e3ov387o.mysql.rds.aliyuncs.com:3306/youyd?characterEncoding=utf-8&useSSL=false
     type: com.alibaba.druid.pool.DruidDataSource
-    username: admin
-    password: !QAZ2wsx
+    username: zoocode
+    password: '{cipher}AQBg7UnnR4NvH3p4Fx66S/XRUv3LNmBPWK2BKKqH8U8Z8pz5QLb1jbwSNvNF2XI6lblDIIcDdPXgsCG82dSqNMTHugWcVMdOyDX8lf2iXDuxin+e4HDuZB41L+qVJXavFtBlHv7NTt97DyNr7OgEP1P2a1/WOzjOMFxzMN5/y6jxc9eqt2pt4EON2j+pLN1FLUz5hyeceKlvGxLqGqep64WtfkdBNuJQR2CbYuQj41YYVYZxra5oK1rl4jYFW1eI778ef0R2xuRNTLP/8K1zQNnXaiN59K2UaVwsKllb3EcSFaWfU9pOQcyFR7O984XNTI2QQZfl9X3508m66SiRIcd1ulimqhYWPeygt/pOucMp7ZwwKD1Y9YsTj+GyX/OxDv4='
     initialSize: 10 # 池启动时创建的连接数量
     maxWait: 60000 # 配置获取连接等待超时的时间
     minIdle: 5 # 在不新建连接的条件下，池中保持空闲的最少连接数
@@ -69,15 +69,12 @@ eureka:
       defaultZone:  http://114.55.104.203:5000/eureka  #单机版
   instance:
     # 为注册的这个服务起个别名
-    #instance-id: http://121.36.158.84:${server.port}
-    instance-id: http://45.76.215.59:${server.port}
+    instance-id: http://121.36.158.84:${server.port}
     prefer-ip-address: true     #使用ip进行注册
     # 注册中心跳转到swagger接口
-    #status-page-url-path:  http://121.36.158.84:${server.port}/swagger-ui.html
-    status-page-url-path:  http://45.76.215.59:${server.port}/swagger-ui.html
+    status-page-url-path:  http://121.36.158.84:${server.port}/swagger-ui.html
     # #绑定客户端的ip而不是主机号
-    #hostname: 121.36.158.84   # ${spring.cloud.client.ip-address} 参考https://blog.csdn.net/xichenguan/article/details/76632033
-    hostname: 45.76.215.59
+    hostname: 121.36.158.84   # ${spring.cloud.client.ip-address} 参考https://blog.csdn.net/xichenguan/article/details/76632033
 
 # 暂无可用图床，自行对接图床
 # 阿里云OSS对象存储，如果没有aliyun oss 注释这个配置
