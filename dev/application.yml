@@ -60,10 +60,9 @@ spring:
     #     port: 5672
 
   redis:
-    host: 139.180.196.135
+    host: 45.76.215.59
     port: 6379
     timeout: 90000
-    password: root
 
 eureka:
   client: #客户端注册进eureka服务列表内
