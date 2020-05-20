@@ -11,7 +11,7 @@ spring:
     admin:
       client:
         url: http://localhost:9090
-
+      context-path: /admin
   jpa:
     database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
     database: MYSQL
