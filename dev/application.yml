@@ -7,18 +7,14 @@ spring:
   # 如果没有aliyun oss 打开这个配置
   #  autoconfigure:
   #    exclude: cn.javaer.aliyun.spring.boot.autoconfigure.oss.OssAutoConfiguration
-  boot:
-    admin:
-      client:
-        url: http://localhost:9090
-      context-path: /admin
+
   jpa:
     database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
     database: MYSQL
     show-sql: true
     open-in-view: true
     hibernate:
-    #  ddl-auto: none # 关闭每次启动自动删除表数据
+      #  ddl-auto: none # 关闭每次启动自动删除表数据
       ddl-auto: update
     properties:
       hibernate.id.new_generator_mappings: true
@@ -28,15 +24,15 @@ spring:
       hibernate.generate_statistics: false
       # 运行程序会校验数据与数据库的字段类型是否相同，不同会报错。
       # hibernate.hbm2ddl.auto: validate
-      hibernate: 
+      hibernate:
         dialect: org.hibernate.dialect.MySQL5Dialect
 
   datasource: # Druid连接池的配置信息
-    driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://rm-bp132w75u10e3ov387o.mysql.rds.aliyuncs.com:3306/youyd?characterEncoding=utf-8&useSSL=false
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/madaoo?characterEncoding=utf-8&useSSL=false
     type: com.alibaba.druid.pool.DruidDataSource
-    username: zoocode  
-    password: '{cipher}AQBTJTjAvGdkPHWJrTzwKF+Y+aXFCpRhPnsScNoP2t4Dt4LKDydnSX5vjq8aLzeIfHsBWo2+PE+A35+Be5/np6Vf3eTdU1/WPsu2J70P+1pP5Gl6ALsUkOVIK07SU/5ZDNpeKH6swp6PZv0dYEomqjffqpKm+cBMk7G45jpZvTa87l94RGxeT/2+3swhAm3Lvg04CMjx2yPsa9MsSmG4fbu7UQ9aATO3m87+1/17aKhVC3xkgw/Z6B7ngpeCHckrhxfB/6Wdh5gfFQelcyUlGFmjc2gxqt8ZxUYI2n8PaX+GHWagvwKPz3m8dpzwwlwhTpKVUdxRmaTSPajFJ+vcB4PC38+tItWN32/y5f9BNbBjCcR1nZZYc1d5G1Gk3feSaA62EIF5ePg+QW9wOY9EuJWd'
+    username: root
+    password: 123456
     initialSize: 10 # 池启动时创建的连接数量
     maxWait: 60000 # 配置获取连接等待超时的时间
     minIdle: 5 # 在不新建连接的条件下，池中保持空闲的最少连接数
@@ -54,22 +50,22 @@ spring:
 
     # 访问：http://localhost:port/domain/druid/login.html 进行登录访问。
     #   rabbitmq:
-    #     host: 39.108.191.56
+    #     host: 39.118.191.56
     #     username: admin
     #     password: admin
     #     port: 5672
 
   redis:
-    host: 121.36.158.84
+    host: 127.0.0.1
     port: 6379
     timeout: 90000
-    password: '{cipher}AQBUHacsyC5ONHx5qLC0Cf6jGI+s1GwI3HGzc33tBuiVDZi59oH1U0+q8XMgOg2Ulc7qnoHM+h4gAbmlrnt5UN3oZCxGytnjFZXQeh4LyYnZlBqIVmVR+duJzOa1+NE8zBstN1p8Vrq1munnT8LqO+wy7bzuH8EhWmbRgkFfil04Em+nZ3BEapPdxHtRsY4eySjNV/rK65pVYSrw2mOVtDQ70WkFJdmiqSMNzAOPlmGmk/iUhQpxIy/AKbsimmFhsa/Crk5EpkpBplkmupyo/PliLjStW1pnPfSlDsTxSTl+veTyeyw9rQy/1l2h0bOa9S95JlGwI89xiZR5IEf5vCzRE7nv+KrQSqRmhUV5cXdn4aIYlW9ktYCT6sQQ7chru+o='
-
+    password: 
+    
 eureka:
   client: #客户端注册进eureka服务列表内
     service-url:
       #defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
-      defaultZone:  http://127.0.0.1:5000/eureka  #单机版
+      defaultZone:  http://127.0.0.1:9009/eureka  #单机版
   instance:
     # 为注册的这个服务起个别名
     instance-id: ${spring.cloud.client.ip-address}:${server.port}
@@ -79,24 +75,16 @@ eureka:
     # #绑定客户端的ip而不是主机号
     hostname: ${spring.cloud.client.ip-address}   # ${spring.cloud.client.ip-address} 参考https://blog.csdn.net/xichenguan/article/details/76632033
 
-# 暂无可用图床，自行对接图床
-# 阿里云OSS对象存储，如果没有aliyun oss 注释这个配置
-aliyun:
- oss:
-   # 确认endpoint里面的请求地址跟bucket是否都一致。 https://mvp.aliyun.com/zhidao/9180
-    endpoint: oss-cn-shanghai.aliyuncs.com
-    access-key-id: LTAI4GEKJCtEQgJEKthv6RxG
-    access-key-secret: '{cipher}AQAEXsD6bb8C5tWsX/gCA//gthigzDy6rMIppbnak2yvD1hCX7WCdD/1MeYjD1iVH4oOWbFEMwiCVN4dmj7Yg4amYxwn+CS5Ac0VOqoi1Xk18hGSywigHiPmJMB6MTjnC14miV1KA9C9jhdQNvcv0FKf+lu0UUxfh8Gzu6crTOA3OMXO9WgnWZ8EQo2NFyhnoybAvG9R02pCBw0pw7v0xc+vV29+CzBQvv4rtwRcz0zofkdTlFQK64t6qebOCmo5MfTIWbmXHfIvWa3uYFx7R6VANdIc7ID9f7D/I8zj7BhzPz03f7puXSQ3xJOM6YAyYz4MmLvCb/y2W0bkRV5woHNmLlJoE67NSk7nalzs0tT3lz8HL5NmtI+2TLHd/N5mWJ/JlnpKYnksxly4Y35fpBM+'
-    
-
 # 监控平台：include: "*"表示 暴露所有端点，info, health... 等等
 management:
+  health:
+    rabbit:
+      enabled: false
   endpoints:
     web:
       exposure:
         # *在YAML中有特殊的含义，所以如果你想包含（或排除）所有的端点，一定要加引号，如下例所示：
         include: "*"
-
 
 ### Hystrix 配置，解决Spring Cloud第一次调用失败
 hystrix:
@@ -118,4 +106,4 @@ feign:
 # feign请求打印日志
 logging:
   level:
-    com.ibole.api: debug
+    com.madao.api: debug
