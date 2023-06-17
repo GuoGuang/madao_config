@@ -56,18 +56,18 @@ spring:
     port: 5672
     virtual-host: /
     publisher-returns: true
-  redis:
-    host: 82.156.148.211
-    port: 6379
-    timeout: 90000
-    password: '{cipher}AQBeqMZOvJ5H2pI6qP4CpTdMbC/zH0mMAKJIePUfKhgkTAqbW9iQS2We37ablmlf7nQXaEg7PoOXELaZyZTB64TVOjuuyseAywzHom+InJHbXmCj7PgpwF14+GGJV8K0Ot6wBkl9GgccygjiQwnVPnWAEGn1my14e8zvKW7UyhL1F2agBUBLnMyoVy5p0jhvPmY3USBmWitHk+aevgmwQM+UGdn9qBp1z/3iu4bzFSms7uSrCOo/oR4OROrpLrFgAC6TEmiJ9ZwRCSJv6aTK8iTdK0fnySQZDAejqb4jqkY8BExJj7iWwK7NffxHQUANP2Y1orq3SfAns06tzUQg1XXPPVhgoRMRiZAxnhxOfLcFtkUJmj7G5TfbetYB47rrDQc='
-
+  data:
+    redis:
+      host: 82.156.148.211
+      port: 6379
+      timeout: 90000
+      password: '{cipher}AQBeqMZOvJ5H2pI6qP4CpTdMbC/zH0mMAKJIePUfKhgkTAqbW9iQS2We37ablmlf7nQXaEg7PoOXELaZyZTB64TVOjuuyseAywzHom+InJHbXmCj7PgpwF14+GGJV8K0Ot6wBkl9GgccygjiQwnVPnWAEGn1my14e8zvKW7UyhL1F2agBUBLnMyoVy5p0jhvPmY3USBmWitHk+aevgmwQM+UGdn9qBp1z/3iu4bzFSms7uSrCOo/oR4OROrpLrFgAC6TEmiJ9ZwRCSJv6aTK8iTdK0fnySQZDAejqb4jqkY8BExJj7iWwK7NffxHQUANP2Y1orq3SfAns06tzUQg1XXPPVhgoRMRiZAxnhxOfLcFtkUJmj7G5TfbetYB47rrDQc='
 
 eureka:
   client: #客户端注册进eureka服务列表内
     service-url:
       #defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
-      defaultZone:  http://82.156.148.211:9009/eureka  #单机版
+      defaultZone:  http://127.0.0.1:9009/eureka  #单机版
       #defaultZone:  http://192.168.124.8:9009/eureka  #单机版
 
   instance:
@@ -88,6 +88,11 @@ aliyun:
     endpoint: oss-cn-shanghai.aliyuncs.com
     access-key-id: LTAI4GEKJCtEQgJEKthv6RxG
     access-key-secret: '{cipher}AQAEXsD6bb8C5tWsX/gCA//gthigzDy6rMIppbnak2yvD1hCX7WCdD/1MeYjD1iVH4oOWbFEMwiCVN4dmj7Yg4amYxwn+CS5Ac0VOqoi1Xk18hGSywigHiPmJMB6MTjnC14miV1KA9C9jhdQNvcv0FKf+lu0UUxfh8Gzu6crTOA3OMXO9WgnWZ8EQo2NFyhnoybAvG9R02pCBw0pw7v0xc+vV29+CzBQvv4rtwRcz0zofkdTlFQK64t6qebOCmo5MfTIWbmXHfIvWa3uYFx7R6VANdIc7ID9f7D/I8zj7BhzPz03f7puXSQ3xJOM6YAyYz4MmLvCb/y2W0bkRV5woHNmLlJoE67NSk7nalzs0tT3lz8HL5NmtI+2TLHd/N5mWJ/JlnpKYnksxly4Y35fpBM+'
+
+com:
+  madao:
+    # 秘钥token，例：-----BEGIN PUBLIC KEY-----xxxx-----END PUBLIC KEY----- 取其中的xxxx
+    secretKey: '{cipher}AQCIu//x6tKZbpMQWbcbabRWy3GaR6wZY59YVrUF+AHKeTf/a46Z8zjHA+6DF28LJ32lq52RsxZN5R63nJW9h37nbg0aIUOPwUuCrKDl8xS/28GgxL/PxqUzP+aJZkYOjA/HWYRhLKMwnRd7ZYQFfqQAwkSiscRdmQG9u6ccT5i0BQPyZnjqwIdkECXHQRgkqXlYZ5tX5/GzsEGA+bfIc3OtcPppAKyHXP9MvwBGFLMz12q1FUf/lcJOu/61taE4VOfbCvTyI84Jcful/4fOuS1Auf/P9EXkYuq0krYrpTfv3Bw52yGivHuHzTwZKq2zoYf15dsI8F4sTppGaE5ZhqZZWztAahpsE3L/MvL0x25JdUdW7DeCHE7G/yGesWi4f1pmjUExwUtPABnqlykmMU/BtfYnVHeMwMesAMQ2i6bzrJr8EGPMKA964QVEA2AOrM3sZgWLu+zjLQgevr8lRi2gPxAiFi6W2pBWD0d0wu9sEwZnbDdxYBXGQuTZ7X4cMUwaAZ3oD9Uu03H2ChIp9opwMZVArknOtOsdY+jvtdSD3vDxJ2kCBVvVNfPGFG8AMRF4vJceveTIEcWN8pn6aXA0PdnTGrvwBzoxOJNcKjIStfkPJ6Pw2aY5EOTfE6RtPlpl5Vxclbn1UKNio9bh4vWz9g+svEKzPYCk1Fu4b9HFYmc665/x5uHD+0DpaZCgfkJEL7ftCphROgeJBMHY4I7s/5nFVSLmXHUOeE6fhjDlK21To1hmSVJ3altz7Ib8YlukzOEADYRn3xeW580GoNzxahilbOYphbTx+nNUeApECcZahPi0gsEpI8f9O1LPdD+rxJSRR/grUPn5GwChWY7jea3tr8qBaT+HP0IW1TZxGUH4KGBzGoZkD03PFi+B+IU='
 
 # 监控平台：include: "*"表示 暴露所有端点，info, health... 等等
 management:
