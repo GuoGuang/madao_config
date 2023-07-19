@@ -30,7 +30,7 @@ spring:
   # 访问：http://localhost:port/domain/druid/login.html 进行登录访问。
   datasource: # Druid连接池的配置信息
     driverClassName: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://82.156.148.211:3306/madaoo?characterEncoding=utf-8&useSSL=false
+    url: jdbc:mysql://82.156.148.211:3306/madaoo?characterEncoding=utf-8&allowPublicKeyRetrieval=true&useSSL=false
     type: com.alibaba.druid.pool.DruidDataSource
     username: root
     password: '{cipher}AQBU8CpxR6VrfztuDDHbqHURb6REiQywAyKomZaHbj0aAhqRKSqnliEm7mpzeHbqSlFslnVts/gpkdJEmANLImQSt+MXqwV/dEg/t/boJF7SjhOKQnmYL8XjvMK7jRj5mB1SbjVp2GFbStDpd72v2C/EOKd04Y4XqYgoywCvnTcpzAwvaJ1An9P/3tJf//9YiQKjGqPDrQy1qVDZlib0P7leQV2TcnTZfiERmMchO1Ha5h+5EviFSVU9FbVsWoCr5WM83P3rWEUstZYWHzFQp8MFWDEPEza7zY0x1thgPlCghaWw6usMLYDkR1hjCx8R7Y2YOV0dNnRhdbpExYRWv7WDbuBQbyiH5K+hQdViMLBswU9oFYYA+IY1R6Qi6W2cYHA='
@@ -67,7 +67,7 @@ eureka:
   client: #客户端注册进eureka服务列表内
     service-url:
       #defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
-      defaultZone:  http://127.0.0.1:9009/eureka  #单机版
+      defaultZone:  http://82.156.148.211:9009/eureka  #单机版
       #defaultZone:  http://192.168.124.8:9009/eureka  #单机版
 
   instance:
