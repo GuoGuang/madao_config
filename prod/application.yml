@@ -9,7 +9,6 @@ spring:
   #    exclude: cn.javaer.aliyun.spring.boot.autoconfigure.oss.OssAutoConfiguration
 
   jpa:
-    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
     database: MYSQL
     show-sql: true
     open-in-view: true
@@ -24,8 +23,6 @@ spring:
       hibernate.generate_statistics: false
       # 运行程序会校验数据与数据库的字段类型是否相同，不同会报错。
       # hibernate.hbm2ddl.auto: validate
-      hibernate:
-        dialect: org.hibernate.dialect.MySQL5Dialect
 
   # 访问：http://localhost:port/domain/druid/login.html 进行登录访问。
   datasource: # Druid连接池的配置信息
@@ -67,7 +64,7 @@ eureka:
   client: #客户端注册进eureka服务列表内
     service-url:
       #defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
-      defaultZone:  http://82.156.148.211:9009/eureka  #单机版
+      defaultZone:  http://127.0.0.1:9009/eureka  #单机版
       #defaultZone:  http://192.168.124.8:9009/eureka  #单机版
 
   instance:
