@@ -91,19 +91,6 @@ com:
     # 秘钥token，例：-----BEGIN PUBLIC KEY-----xxxx-----END PUBLIC KEY----- 取其中的xxxx
     secretKey: '{cipher}AQCIu//x6tKZbpMQWbcbabRWy3GaR6wZY59YVrUF+AHKeTf/a46Z8zjHA+6DF28LJ32lq52RsxZN5R63nJW9h37nbg0aIUOPwUuCrKDl8xS/28GgxL/PxqUzP+aJZkYOjA/HWYRhLKMwnRd7ZYQFfqQAwkSiscRdmQG9u6ccT5i0BQPyZnjqwIdkECXHQRgkqXlYZ5tX5/GzsEGA+bfIc3OtcPppAKyHXP9MvwBGFLMz12q1FUf/lcJOu/61taE4VOfbCvTyI84Jcful/4fOuS1Auf/P9EXkYuq0krYrpTfv3Bw52yGivHuHzTwZKq2zoYf15dsI8F4sTppGaE5ZhqZZWztAahpsE3L/MvL0x25JdUdW7DeCHE7G/yGesWi4f1pmjUExwUtPABnqlykmMU/BtfYnVHeMwMesAMQ2i6bzrJr8EGPMKA964QVEA2AOrM3sZgWLu+zjLQgevr8lRi2gPxAiFi6W2pBWD0d0wu9sEwZnbDdxYBXGQuTZ7X4cMUwaAZ3oD9Uu03H2ChIp9opwMZVArknOtOsdY+jvtdSD3vDxJ2kCBVvVNfPGFG8AMRF4vJceveTIEcWN8pn6aXA0PdnTGrvwBzoxOJNcKjIStfkPJ6Pw2aY5EOTfE6RtPlpl5Vxclbn1UKNio9bh4vWz9g+svEKzPYCk1Fu4b9HFYmc665/x5uHD+0DpaZCgfkJEL7ftCphROgeJBMHY4I7s/5nFVSLmXHUOeE6fhjDlK21To1hmSVJ3altz7Ib8YlukzOEADYRn3xeW580GoNzxahilbOYphbTx+nNUeApECcZahPi0gsEpI8f9O1LPdD+rxJSRR/grUPn5GwChWY7jea3tr8qBaT+HP0IW1TZxGUH4KGBzGoZkD03PFi+B+IU='
 
-# 监控平台：include: "*"表示 暴露所有端点，info, health... 等等
-management:
-  health:
-    rabbit:
-      enabled: false
-  endpoints:
-    web:
-      exposure:
-        # *在YAML中有特殊的含义，所以如果你想包含（或排除）所有的端点，一定要加引号，如下例所示：
-        include: "*"
-
-
-
 ### Hystrix 配置，解决Spring Cloud第一次调用失败
 hystrix:
   command:
@@ -121,7 +108,38 @@ feign:
   hystrix:
     enabled: true
 
-# feign请求打印日志
 logging:
+  pattern:
+    # 控制台日志添加追踪ID
+    level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"
   level:
+    # feign请求打印日志
     com.madao.api: debug
+    org.springframework.data.elasticsearch.client.WIRE: TRACE
+    org.springframework.web.servlet.DispatcherServlet: DEBUG
+# 配置分布式跟踪（tracing）
+management:
+  tracing:
+    # 设置跟踪数据的采样概率为1.0，即完全采样
+    sampling:
+      probability: 1.0
+  # 配置度量（metrics）
+  metrics:
+    distribution:
+      # 启用度量数据的百分位数直方图统计信息
+      percentiles-histogram:
+        # 启用 'greeting' 指标的百分位数直方图统计信息
+        greeting: true
+        # 启用 'http.server.requests' 指标的百分位数直方图统计信息
+        http.server.requests: true
+  # 配置管理端点（endpoints）的曝露策略
+  endpoints:
+    # 配置Web端点的曝露策略
+    web:
+      exposure:
+        # 曝露所有的管理端点给Web请求
+        include: "*"
+    jmx:
+      exposure:
+        # 曝露所有端点给JMX
+        include: "*"
