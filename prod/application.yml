@@ -111,7 +111,7 @@ feign:
 logging:
   pattern:
     # 控制台日志添加追踪ID
-    level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"
+    level: =%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-},%X{parentId:-},%mdc{req.method},%mdc{req.requestURI},%mdc{USER-ID}]'
   level:
     # feign请求打印日志
     com.madao.api: debug
