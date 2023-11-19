@@ -7,7 +7,8 @@ spring:
   # 如果没有aliyun oss 打开这个配置
   #  autoconfigure:
   #    exclude: cn.javaer.aliyun.spring.boot.autoconfigure.oss.OssAutoConfiguration
-
+  elasticsearch:
+    uris: 82.156.148.211:9200
   jpa:
     database: MYSQL
     show-sql: true
@@ -115,8 +116,10 @@ logging:
   level:
     # feign请求打印日志
     com.madao.api: debug
-    org.springframework.data.elasticsearch.client.WIRE: TRACE
+    org.springframework.data.elasticsearch: TRACE
     org.springframework.web.servlet.DispatcherServlet: DEBUG
+
+
 # 配置分布式跟踪（tracing）
 management:
   tracing:
