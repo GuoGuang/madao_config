@@ -4,9 +4,6 @@ spring:
     multipart:
       max-file-size: 10MB
       max-request-size: 10MB
-  # 如果没有aliyun oss 打开这个配置
-  #  autoconfigure:
-  #    exclude: cn.javaer.aliyun.spring.boot.autoconfigure.oss.OssAutoConfiguration
   elasticsearch:
     uris: 82.156.148.211:9200
   jpa:
@@ -78,7 +75,6 @@ eureka:
     hostname: ${spring.cloud.client.ip-address}   # ${spring.cloud.client.ip-address} 参考https://blog.csdn.net/xichenguan/article/details/76632033
     
 
-# 暂无可用图床，自行对接图床
 # 阿里云OSS对象存储，如果没有aliyun oss 注释这个配置
 aliyun:
   oss:
@@ -112,7 +108,7 @@ feign:
 logging:
   pattern:
     # 控制台日志添加追踪ID
-    level: =%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-},%X{parentId:-},%mdc{req.method},%mdc{req.requestURI},%mdc{USER-ID}]'
+    level: =%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-},%X{parentId:-},%mdc{req.method},%X{req.requestURI},%mdc{USER-ID}]'
   level:
     # feign请求打印日志
     com.madao.api: debug
@@ -122,6 +118,10 @@ logging:
 
 # 配置分布式跟踪（tracing）
 management:
+  # 日志收集到zipkn
+  zipkin:
+    tracing:
+      endpoint: http://82.156.205.178:9411/api/v2/spans
   tracing:
     # 设置跟踪数据的采样概率为1.0，即完全采样
     sampling:
